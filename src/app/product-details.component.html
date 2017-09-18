@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="product!= null">
     <h1>Hero Form - {{product.name}}</h1>
     <img src="/assets/product.jpg" alt="product image" /> 
     <form #heroForm="ngForm">
@@ -37,7 +37,7 @@
         </div>
  
       <button type="submit"
-       class="button is-primary">Submit</button>
+       class="button is-primary is-pulled-righ">Submit</button>
  
     </form>
 </div>

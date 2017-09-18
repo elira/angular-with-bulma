@@ -9,8 +9,13 @@ import { Product }        from './product'
 export class ProductListItem {
   @Input() product: Product;
   @Output() onSelected = new EventEmitter<Product>();
+  @Output() onDeleted = new EventEmitter<Product>();
   
     onSelect(): void {
       this.onSelected.emit(this.product);
+    }
+
+    onDelete(): void {
+      this.onDeleted.emit(this.product);
     }
 }

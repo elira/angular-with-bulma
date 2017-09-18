@@ -10,10 +10,14 @@ import { Product }        from './product'
 export class Products {
   @Input() products: Product[];
   @Output() onSelected = new EventEmitter<Product>();
-
+  @Output() onDeleted = new EventEmitter<Product>();
+  
+  
   onSelect(product: Product): void {
     this.onSelected.emit(product);
   }
   
-    
+  onDelete(product: Product): void {
+    this.onDeleted.emit(product);
+  }    
 }

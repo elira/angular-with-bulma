@@ -14,11 +14,19 @@ export class AppComponent {
   selectedProduct: Product;
 
   constructor(private productService:  ProductService) { 
-    this.products = productService.getHeroes();
+    this.products = this.productService.getProducts();
     this.selectedProduct = this.products[0];
   }
 
   onSelect(product: Product): void {
     this.selectedProduct = product;
+  }
+
+  onDelete(product: Product): void {
+    if (this.selectedProduct.id == product.id){
+      this.selectedProduct = null;
+    }
+    this.productService.deleteProduct(product);
+    this.products = this.productService.getProducts();
   }
 }

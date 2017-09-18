@@ -3,7 +3,8 @@
         <product-list-item 
             [product]="product"
             [class.selected]="product === selectedProducts"
-            (onSelected)="onSelect($event)">
+            (onSelected)="onSelect($event)"
+            (onDeleted)="onDelete($event)">
         </product-list-item>
     </li>
 </ul>

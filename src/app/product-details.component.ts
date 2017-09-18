@@ -15,7 +15,10 @@ export class ProductDetails {
 
   ngOnChanges(changes: SimpleChanges) {
     var product = changes['product'].currentValue;
-    if (product == null) return;
+    if (product == null) {
+      this.productEdit = null;
+      return;
+    }
 
     this.productEdit = {
       id: product.id,

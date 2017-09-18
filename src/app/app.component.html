@@ -10,7 +10,8 @@
 	  <div class="columns">
 		  <div class="column is-two-thirds">
 			<products [products]="products" 
-				(onSelected)="onSelect($event)">
+				(onSelected)="onSelect($event)"
+				(onDeleted)="onDelete($event)">
 			</products>
 		  </div>
 		  <div class="column">
