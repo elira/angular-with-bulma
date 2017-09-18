@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductService }        from './products.service'
 import { Product }        from './product'
 
@@ -9,9 +9,10 @@ import { Product }        from './product'
 })
 export class Products {
   @Input() products: Product[];
-  
+  @Output() onSelected = new EventEmitter<Product>();
+
   onSelect(product: Product): void {
-    //this.selectedProduct = product;
+    this.onSelected.emit(product);
   }
   
     

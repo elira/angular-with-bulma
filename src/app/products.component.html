@@ -1,7 +1,9 @@
 <ul class="product-list">
-    <li *ngFor="let product of products"
-      [class.selected]="product === selectedProducts"
-      (click)="onSelect(product)">
-      <span class="badge">{{product.id}}</span> {{product.name}}
+    <li *ngFor="let product of products" >
+        <product-list-item 
+            [product]="product"
+            [class.selected]="product === selectedProducts"
+            (onSelected)="onSelect($event)">
+        </product-list-item>
     </li>
-  </ul>
+</ul>

@@ -17,4 +17,8 @@ export class AppComponent {
     this.products = productService.getHeroes();
     this.selectedProduct = this.products[0];
   }
+
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
+  }
 }
