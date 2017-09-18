@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component,
+   Input,
+   OnChanges,
+   SimpleChanges} from '@angular/core';
 import { Product }        from './product'
 
 @Component({
@@ -8,4 +11,18 @@ import { Product }        from './product'
 })
 export class ProductDetails {
   @Input() product: Product;
+  productEdit: Product;
+
+  ngOnChanges(changes: SimpleChanges) {
+    var product = changes['product'].currentValue;
+    if (product == null) return;
+
+    this.productEdit = {
+      id: product.id,
+      name: product.name,
+      description: product.description,
+      price: product.price,
+      creationDate: product.creationDate
+    };
+  }
 }
