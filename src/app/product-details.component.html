@@ -1,1 +1,44 @@
-{{product.name}}
+<div class="container">
+    <h1>Hero Form - {{product.name}}</h1>
+    <img src="/assets/product.jpg" alt="product image" /> 
+    <form>
+
+        <div class="field">
+            <label for="name" class="label">Name</label>
+            <div class="control">
+                <input class="input"
+                name="name" 
+                    type="text"
+                     placeholder="Product Name"
+                     [(ngModel)]="product.name" required>
+            </div>
+        </div>
+
+        <div class="field">
+                <label for="description" class="label">Description</label>
+                <div class="control">
+                    <input class="input" 
+                        type="text"
+                        name="description"
+                            placeholder="Product Description"
+                            [(ngModel)]="product.description" required>
+                </div>
+            </div>
+            
+        <div class="field">
+            <label for="price" class="label">Price</label>
+            <div class="control">
+                <input class="input" 
+                    type="text"
+                    name="price"
+                        placeholder="Price"
+                        [(ngModel)]="product.price" required>
+            </div>
+        </div>
+ 
+      <button type="submit"
+       class="button is-primary">Submit</button>
+ 
+    </form>
+</div>
+

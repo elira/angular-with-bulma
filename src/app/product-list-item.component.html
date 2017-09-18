@@ -1,3 +1,14 @@
 <div (click)="onSelect()">
-    <span class="badge">{{product.id}}</span> {{product.name}}
+    <div class="columns">
+        <div class="column auto">
+                <img src="/assets/product.jpg" alt="product image" /> 
+        </div>
+        <div class="column is-two-thirds">
+                <div class="badge">{{product.id}}</div>
+                <div>{{product.name}}</div>
+        </div>
+        <div class="column auto button-column">
+            <button class="button is-danger">Delete</button>
+        </div>
+    </div>
 </div>
