@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+ <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-item">
+	<h1>
+	  {{title}}
+	</h1>
+  </div>
+</nav>
+<section class="section">
+    <div class="container">
+	  <div class="columns">
+		  <div class="column is-two-thirds">
+			<products [products]="products"></products>
+		  </div>
+		  <div class="column">
+			<product-details [product]="selectedProduct"></product-details>
+		  </div>
+    </div>
+	</div>
+  </section>
+
