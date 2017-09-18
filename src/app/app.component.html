@@ -15,7 +15,9 @@
 			</products>
 		  </div>
 		  <div class="column">
-			<product-details [product]="selectedProduct"></product-details>
+			<product-details [product]="selectedProduct"
+				(onSaved)="onSave($event)">
+		</product-details>
 		  </div>
     </div>
 	</div>

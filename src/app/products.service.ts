@@ -21,4 +21,13 @@ export class ProductService {
   deleteProduct(product: Product){
     this.products = this.products.filter(p => p.id != product.id);
   }
+
+  saveProduct(product: Product){
+    let index = this.products.findIndex(p => p.id == product.id);
+    if ( index != -1 ){
+      this.products.splice(index,1,product)
+      return;
+    }
+    this.products.push(product);
+  }
 }

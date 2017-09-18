@@ -1,16 +1,16 @@
 <div class="container" *ngIf="product!= null">
     <h1>Hero Form - {{product.name}}</h1>
     <img src="/assets/product.jpg" alt="product image" /> 
-    <form #heroForm="ngForm">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit()">
 
         <div class="field">
             <label for="name" class="label">Name</label>
             <div class="control">
                 <input class="input"
-                name="name" 
+                    name="name" 
                     type="text"
-                     placeholder="Product Name"
-                     [(ngModel)]="productEdit.name" required>
+                    placeholder="Product Name"
+                    [(ngModel)]="productEdit.name" required>
             </div>
         </div>
 
@@ -20,8 +20,8 @@
                 <input class="input" 
                     type="text"
                     name="description"
-                        placeholder="Product Description"
-                        [(ngModel)]="productEdit.description" required>
+                    placeholder="Product Description"
+                    [(ngModel)]="productEdit.description">
             </div>
         </div>
             
@@ -31,13 +31,15 @@
                 <input class="input" 
                     type="text"
                     name="price"
-                        placeholder="Price"
-                        [(ngModel)]="productEdit.price" required>
+                    placeholder="Price"
+                    [(ngModel)]="productEdit.price" 
+                    required>
             </div>
         </div>
  
       <button type="submit"
-       class="button is-primary is-pulled-righ">Submit</button>
+       class="button is-primary"
+       [disabled]="!productForm.form.valid">Submit</button>
  
     </form>
 </div>

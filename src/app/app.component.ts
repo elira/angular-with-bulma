@@ -29,4 +29,9 @@ export class AppComponent {
     this.productService.deleteProduct(product);
     this.products = this.productService.getProducts();
   }
+
+  onSave(product: Product): void {
+    this.productService.saveProduct(product);
+    this.products = this.productService.getProducts();
+  }
 }

@@ -1,7 +1,9 @@
 import { Component,
    Input,
    OnChanges,
-   SimpleChanges} from '@angular/core';
+   SimpleChanges,
+   Output,
+   EventEmitter} from '@angular/core';
 import { Product }        from './product'
 
 @Component({
@@ -11,7 +13,20 @@ import { Product }        from './product'
 })
 export class ProductDetails {
   @Input() product: Product;
+  @Output() onSaved = new EventEmitter<Product>();
+  
   productEdit: Product;
+
+  submitted = false;
+  
+  onSubmit() { 
+    this.submitted = true; 
+    this.onSaved.emit(this.productEdit);
+  }
+
+  save(): void{
+    this.onSaved.emit(this.productEdit);
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     var product = changes['product'].currentValue;
