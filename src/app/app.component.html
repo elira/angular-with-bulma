@@ -11,7 +11,8 @@
 		  <div class="column is-two-thirds">
 			<products [products]="products" 
 				(onSelected)="onSelect($event)"
-				(onDeleted)="onDelete($event)">
+				(onDeleted)="onDelete($event)"
+				(onAdded)="onAdd($event)">
 			</products>
 		  </div>
 		  <div class="column">

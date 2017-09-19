@@ -11,7 +11,7 @@ export class Products {
   @Input() products: Product[];
   @Output() onSelected = new EventEmitter<Product>();
   @Output() onDeleted = new EventEmitter<Product>();
-  
+  @Output() onAdded = new EventEmitter<Product>();
   
   onSelect(product: Product): void {
     this.onSelected.emit(product);
@@ -20,4 +20,8 @@ export class Products {
   onDelete(product: Product): void {
     this.onDeleted.emit(product);
   }    
+
+  onAdd(): void {
+    this.onAdded.emit();
+  }
 }

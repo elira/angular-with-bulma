@@ -33,5 +33,15 @@ export class AppComponent {
   onSave(product: Product): void {
     this.productService.saveProduct(product);
     this.products = this.productService.getProducts();
+    this.selectedProduct = product;    
+  }
+
+  onAdd(): void {
+    this.selectedProduct = {
+      id: null,
+      name: null,
+      price: null,
+      creationDate: new Date()
+    };
   }
 }
