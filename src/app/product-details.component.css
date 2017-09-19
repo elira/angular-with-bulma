@@ -1,3 +1,9 @@
+.product-details{
+    border: 1px solid black;
+    margin-top: 3.5rem;
+    padding: 1rem;
+}
+
 img{
     height: 5rem;
 }

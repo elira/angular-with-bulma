@@ -1,4 +1,4 @@
-<div class="container" *ngIf="product!= null">
+<div class="product-details" *ngIf="product!= null">
     <h1>Hero Form - {{product.name}}</h1>
     <img src="/assets/product.jpg" alt="product image" /> 
     <form #productForm="ngForm" (ngSubmit)="onSubmit()">
