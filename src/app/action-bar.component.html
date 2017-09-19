@@ -1,0 +1,17 @@
+<div class="columns">
+        <div class="column">
+            <button class="button"
+                (click)="onAdd()">Add</button>
+        </div>
+        <div class="column">
+            <input [(ngModel)]="filterService.filterText">
+        </div>
+        <div class="column">
+            <label for="sortBy">Sort By:</label>
+            <select name="sortBy" id="sortBy"
+            [(ngModel)]="filterService.sortBy">
+                <option *ngFor="let sortBy of sortProperties" 
+                    [value]="sortBy.value">{{sortBy.text}}</option>
+            </select>    
+        </div>        
+</div>

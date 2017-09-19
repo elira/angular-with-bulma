@@ -22,12 +22,21 @@ export class ProductService {
     this.products = this.products.filter(p => p.id != product.id);
   }
 
+  getMaxId(): number{
+    const max = this.products.reduce(function(prev, current) {
+      return (prev.id > current.id) ? prev : current
+    },null);
+    return max[0];
+  }
+
   saveProduct(product: Product){
     let index = this.products.findIndex(p => p.id == product.id);
     if ( index != -1 ){
       this.products.splice(index,1,product)
       return;
     }
+
+    product.id = this.getMaxId()+1;
     this.products.push(product);
   }
 }

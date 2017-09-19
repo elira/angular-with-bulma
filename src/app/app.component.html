@@ -9,10 +9,11 @@
     <div class="container">
 	  <div class="columns">
 		  <div class="column is-two-thirds">
+				<action-bar (onAdded)="onAdd($event)">		
+				</action-bar>
 			<products [products]="products" 
 				(onSelected)="onSelect($event)"
-				(onDeleted)="onDelete($event)"
-				(onAdded)="onAdd($event)">
+				(onDeleted)="onDelete($event)">
 			</products>
 		  </div>
 		  <div class="column">

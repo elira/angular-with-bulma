@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductService }        from './products.service'
+import { FilterService }        from './filter.service'
 import { Product }        from './product'
 
 @Component({
@@ -7,11 +8,11 @@ import { Product }        from './product'
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class Products {
+export class Products {    
+
   @Input() products: Product[];
   @Output() onSelected = new EventEmitter<Product>();
   @Output() onDeleted = new EventEmitter<Product>();
-  @Output() onAdded = new EventEmitter<Product>();
   
   onSelect(product: Product): void {
     this.onSelected.emit(product);
@@ -19,9 +20,5 @@ export class Products {
   
   onDelete(product: Product): void {
     this.onDeleted.emit(product);
-  }    
-
-  onAdd(): void {
-    this.onAdded.emit();
   }
 }
